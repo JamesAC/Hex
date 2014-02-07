@@ -1,13 +1,12 @@
 package com.jamesac.hex.Object;
 
-import com.jamesac.hex.Hex;
 import com.jamesac.hex.Object.Component.HexComponent;
-import sun.awt.image.ImageWatched;
 
 import java.util.*;
 
 /**
  * Created by James on 02/02/14.
+ * Based on code from http://entity-systems-wiki.t-machine.org/rdbms-beta
  */
 public class HexObjectManager {
 

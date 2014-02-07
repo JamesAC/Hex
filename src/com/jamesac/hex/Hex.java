@@ -54,8 +54,7 @@ public class Hex extends Canvas implements Runnable {
   public void run() {
     long lastTime = System.nanoTime();
     long timer = System.currentTimeMillis();
-    final double frameTime = 1000000000.0 / 60.0;
-    double delta = 0;
+    double delta;
 
     int frames = 0;
     int updates = 0;
@@ -64,13 +63,9 @@ public class Hex extends Canvas implements Runnable {
 
     while (running) {
       long now = System.nanoTime();
-      delta += (now - lastTime) / frameTime;
-      while (delta >= 1) {
-        update(delta * frameTime);
-        updates++;
-        delta--;
-      }
-      render(now - lastTime);
+      delta = (now - lastTime);
+      update(delta);
+      render();
       frames++;
       lastTime = now;
 
@@ -88,14 +83,12 @@ public class Hex extends Canvas implements Runnable {
     engine.update(dt);
   }
 
-  private void render(long dt) {
+  private void render() {
     BufferStrategy bs = getBufferStrategy();
     if (bs == null) {
       createBufferStrategy(3);
       return;
     }
-
-    engine.render(dt);
 
     System.arraycopy(engine.display.pixels, 0, pixels, 0, engine.display.pixels.length);
 

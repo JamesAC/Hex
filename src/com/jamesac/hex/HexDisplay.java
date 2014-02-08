@@ -1,5 +1,7 @@
 package com.jamesac.hex;
 
+import com.jamesac.hex.Graphics.HexSprite;
+
 import java.util.Random;
 
 public class HexDisplay {
@@ -18,6 +20,18 @@ public class HexDisplay {
 
     for (int i = 0; i < width * height; i++) {
       pixels[i] = random.nextInt();
+    }
+  }
+
+  public void renderSprite(int xp, int yp, HexSprite sprite) {
+    for (int y = 0; y < sprite.height; y++) {
+      int ya = y + yp;
+      for (int x = 0; x < sprite.width; x++) {
+        int xa = x + xp;
+        if (xa < -sprite.width || xa >= width || ya < 0 || ya >= height) break;
+        if (xa < 0) xa = 0;
+        pixels[xa + ya * width] = sprite.pixels[x + y * sprite.width];
+      }
     }
   }
 }

@@ -5,7 +5,12 @@ package com.jamesac.hex.Object.Component;
  */
 public class HCPosition implements HexComponent {
 
-  public float x, y;
+  public double x, y;
+
+  public HCPosition(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
 
   public String toString() {
     return "(" + x + "," + y + ")";

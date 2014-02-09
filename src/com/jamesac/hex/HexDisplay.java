@@ -30,7 +30,9 @@ public class HexDisplay {
         int xa = x + xp;
         if (xa < -sprite.width || xa >= width || ya < 0 || ya >= height) break;
         if (xa < 0) xa = 0;
-        pixels[xa + ya * width] = sprite.pixels[x + y * sprite.width];
+        int col = sprite.pixels[x + y * sprite.width];
+        if (col != 0x00000000)
+          pixels[xa + ya * width] = col;
       }
     }
   }

@@ -5,7 +5,13 @@ package com.jamesac.hex.Object.Component;
  */
 public class HCVelocity implements HexComponent {
 
-  public float x, y;
+  public double x;
+  public double y;
+
+  public HCVelocity(double x, double y) {
+    this.x = x;
+    this.y = y;
+  }
 
   public String toString() {
     return "(" + x + "," + y + ")";

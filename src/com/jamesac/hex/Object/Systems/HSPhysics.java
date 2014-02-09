@@ -1,5 +1,11 @@
 package com.jamesac.hex.Object.Systems;
 
+import com.jamesac.hex.Object.Component.HCPosition;
+import com.jamesac.hex.Object.Component.HCVelocity;
+
+import java.util.Set;
+import java.util.UUID;
+
 /**
  * Created by James on 07/02/14.
  */
@@ -11,7 +17,19 @@ public class HSPhysics extends HexSystem {
 
   @Override
   protected void run() {
-
+    Set<UUID> objs = objectManager.getAllObjectsWithComponent(HCVelocity.class);
+    for (UUID o : objs) {
+      HCVelocity velocity = objectManager.getComponent(o, HCVelocity.class);
+      HCPosition position = objectManager.getComponent(o, HCPosition.class);
+      position.x += velocity.x;
+      if (position.x > 1920 / 3 || position.x < 0) {
+        velocity.x = -(velocity.x);
+      }
+      position.y += velocity.y;
+      if (position.y > 1080 / 3 || position.y < 0) {
+        velocity.y = -(velocity.y);
+      }
+    }
   }
 
   @Override

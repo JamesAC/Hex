@@ -9,7 +9,7 @@ public class HexSprite {
   public int[] pixels;
   private HexSpriteSheet sheet;
 
-  public static HexSprite blueAlien = new HexSprite(40, 64, 40, 64, HexSpriteSheet.aliens);
+  public static HexSprite blueAlien = new HexSprite(40, 66, 40, 66, HexSpriteSheet.aliens);
 
   public HexSprite(int xOff, int yOff, int width, int height, HexSpriteSheet sheet) {
     this.width = width;

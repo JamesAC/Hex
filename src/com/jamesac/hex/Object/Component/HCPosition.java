@@ -1,7 +1,7 @@
 package com.jamesac.hex.Object.Component;
 
 /**
- * Created by James on 07/02/14.
+ * Defines location of center of object. All logic should use this as a <b>center</b> point.
  */
 public class HCPosition implements HexComponent {
 

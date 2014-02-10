@@ -24,6 +24,8 @@ public class HexDisplay {
   }
 
   public void renderSprite(int xp, int yp, HexSprite sprite) {
+    xp -= sprite.width / 2;
+    yp -= sprite.height / 2;
     for (int y = 0; y < sprite.height; y++) {
       int ya = y + yp;
       for (int x = 0; x < sprite.width; x++) {
@@ -34,6 +36,25 @@ public class HexDisplay {
         if (col != 0x00000000)
           pixels[xa + ya * width] = col;
       }
+    }
+  }
+
+  public void clear() {
+    clear(0);
+  }
+
+  /**
+   * Clears all pixels to given colour. Use {@link #clear()} for default black.
+   */
+  public void clear(int col) {
+    for (int i = 0; i < pixels.length; i++) {
+      pixels[i] = col;
+    }
+  }
+
+  public void clearRand() {
+    for (int i = 0; i < pixels.length; i++) {
+      pixels[i] = random.nextInt();
     }
   }
 }

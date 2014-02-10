@@ -29,7 +29,7 @@ public class HexEngine {
     UUID alien = objectManager.createObject("alien");
     objectManager.addComponent(alien, new HCDrawable(HexSprite.blueAlien));
     objectManager.addComponent(alien, new HCPosition(50.0, 50.0));
-    objectManager.addComponent(alien, new HCVelocity(1.0, 1.0));
+    objectManager.addComponent(alien, new HCVelocity(3.0, 3.0));
   }
 
   public void update(double dt) {

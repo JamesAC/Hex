@@ -21,6 +21,7 @@ public class HSRender extends HexSystem {
 
   @Override
   public void run() {
+    display.clear();
     Set<UUID> objs = objectManager.getAllObjectsWithComponent(HCDrawable.class);
     for (UUID o : objs) {
       HCDrawable drawable = objectManager.getComponent(o, HCDrawable.class);

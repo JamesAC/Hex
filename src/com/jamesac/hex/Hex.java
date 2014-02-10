@@ -57,7 +57,6 @@ public class Hex extends Canvas implements Runnable {
     double delta;
 
     int frames = 0;
-    int updates = 0;
 
     requestFocus();
 
@@ -71,8 +70,7 @@ public class Hex extends Canvas implements Runnable {
 
       if (System.currentTimeMillis() - timer > 1000) {
         timer += 1000;
-        frame.setTitle(title + "   |   " + updates + "ups, " + frames + "fps");
-        updates = 0;
+        frame.setTitle(title + "   |   " + frames + "fps");
         frames = 0;
       }
     }

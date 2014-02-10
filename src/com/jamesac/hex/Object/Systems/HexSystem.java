@@ -8,7 +8,7 @@ import com.jamesac.hex.Object.HexObjectManager;
 public abstract class HexSystem {
 
   protected double minTime = 0;
-  private double lastTime;
+  private double tDiff;
   protected HexObjectManager objectManager;
 
   protected HexSystem() {
@@ -16,11 +16,10 @@ public abstract class HexSystem {
   }
 
   public void update(double dt) {
-
-    // TODO: Need to fix this
-    if (dt > minTime) {
+    tDiff += dt;
+    if (tDiff > minTime) {
       this.run();
-      lastTime = System.nanoTime();
+      tDiff = 0;
     }
   }
 

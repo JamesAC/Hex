@@ -12,13 +12,13 @@ import java.util.UUID;
 public class HSPhysics extends HexSystem {
 
   public HSPhysics() {
-    minTime = 1000000.0 / 60;
+    minTime = 1000000000.0 / 60;
   }
 
   @Override
   protected void run() {
-    Set<UUID> objs = objectManager.getAllObjectsWithComponent(HCVelocity.class);
-    for (UUID o : objs) {
+    Set<UUID> objectsWithVelComponent = objectManager.getAllObjectsWithComponent(HCVelocity.class);
+    for (UUID o : objectsWithVelComponent) {
       HCVelocity velocity = objectManager.getComponent(o, HCVelocity.class);
       HCPosition position = objectManager.getComponent(o, HCPosition.class);
       position.x += velocity.x;
@@ -34,6 +34,6 @@ public class HSPhysics extends HexSystem {
 
   @Override
   public String getName() {
-    return null;
+    return "System: Physics";
   }
 }

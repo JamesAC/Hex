@@ -3,7 +3,9 @@ package com.jamesac.hex.Object.Component;
 import com.jamesac.hex.Graphics.HexSprite;
 
 /**
- * Created by James on 07/02/14.
+ * Component to store drawable sprite for an object. Will be drawn centered on an accompanying {@link com.jamesac.hex.Object.Component.HCPosition} component.
+ *
+ * @author JamesAC
  */
 public class HCDrawable implements HexComponent {
 

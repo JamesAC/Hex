@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,10 +16,10 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex.Object.Systems;
+package com.jamesac.Hex.Object.Systems;
 
-import com.jamesac.hex.Object.Component.HCPosition;
-import com.jamesac.hex.Object.Component.HCVelocity;
+import com.jamesac.Hex.Object.Component.HCPosition;
+import com.jamesac.Hex.Object.Component.HCVelocity;
 
 import java.util.Set;
 import java.util.UUID;

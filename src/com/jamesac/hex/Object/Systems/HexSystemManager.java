@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,9 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex.Object.Systems;
+package com.jamesac.Hex.Object.Systems;
 
-import com.jamesac.hex.Object.HexObjectManager;
+import com.jamesac.Hex.Object.HexObjectManager;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -41,7 +41,18 @@ public class HexSystemManager {
 
   public <T extends HexSystem> void addSystem(T system)
   {
+    if (frozen) return;
     system.setObjectManager(objectManager);
     systems.add(system);
+  }
+
+  public void freeze()
+  {
+    frozen = true;
+  }
+
+  public void unfreeze()
+  {
+    frozen = false;
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,9 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex.Object.Systems;
+package com.jamesac.Hex.Object.Systems;
 
-import com.jamesac.hex.Object.HexObjectManager;
+import com.jamesac.Hex.Object.HexObjectManager;
 
 /**
  * Created by James on 07/02/14.
@@ -26,14 +26,16 @@ import com.jamesac.hex.Object.HexObjectManager;
 public abstract class HexSystem {
 
   protected double minTime = 0;
-  private double tDiff;
+  private   double           tDiff;
   protected HexObjectManager objectManager;
 
-  protected HexSystem() {
+  protected HexSystem()
+  {
 
   }
 
-  public void update(double dt) {
+  public void update(double dt)
+  {
     tDiff += dt;
     if (tDiff > minTime) {
       this.run();
@@ -45,7 +47,8 @@ public abstract class HexSystem {
 
   public abstract String getName();
 
-  public void setObjectManager(HexObjectManager objectManager) {
+  public void setObjectManager(HexObjectManager objectManager)
+  {
     this.objectManager = objectManager;
   }
 }

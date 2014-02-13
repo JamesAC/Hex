@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex;
+package com.jamesac.Hex;
 
 import javax.swing.JFrame;
 import java.awt.*;
@@ -28,7 +28,7 @@ public class Hex extends Canvas implements Runnable {
 
   private static int width;
   private static int height;
-  public static int scale = 3;
+  public static int    scale = 3;
   public static String title = "Hex";
 
   private JFrame frame;
@@ -37,11 +37,13 @@ public class Hex extends Canvas implements Runnable {
   private Thread thread;
 
   private BufferedImage image;
-  private int[] pixels;
-  private HexEngine engine;
+  private int[]         pixels;
+  private HexEngine     engine;
 
-  public Hex() {
-    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+  public Hex()
+  {
+    GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment()
+                                           .getDefaultScreenDevice();
     width = gd.getDisplayMode().getWidth() / scale;
     height = gd.getDisplayMode().getHeight() / scale;
     Dimension size = new Dimension(width * scale, height * scale);
@@ -54,13 +56,15 @@ public class Hex extends Canvas implements Runnable {
     engine = new HexEngine(width, height);
   }
 
-  public synchronized void start() {
+  public synchronized void start()
+  {
     running = true;
     thread = new Thread(this, "Display");
     thread.start();
   }
 
-  public synchronized void stop() {
+  public synchronized void stop()
+  {
     running = false;
     try {
       thread.join();
@@ -69,7 +73,8 @@ public class Hex extends Canvas implements Runnable {
     }
   }
 
-  public void run() {
+  public void run()
+  {
     long lastTime = System.nanoTime();
     long timer = System.currentTimeMillis();
     double delta;
@@ -95,18 +100,24 @@ public class Hex extends Canvas implements Runnable {
 
   }
 
-  private void update(double dt) {
+  private void update(double dt)
+  {
     engine.update(dt);
   }
 
-  private void render() {
+  private void render()
+  {
     BufferStrategy bs = getBufferStrategy();
     if (bs == null) {
       createBufferStrategy(3);
       return;
     }
 
-    System.arraycopy(engine.display.pixels, 0, pixels, 0, engine.display.pixels.length);
+    System.arraycopy(engine.display.pixels,
+                     0,
+                     pixels,
+                     0,
+                     engine.display.pixels.length);
 
     Graphics g = bs.getDrawGraphics();
     g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
@@ -114,7 +125,8 @@ public class Hex extends Canvas implements Runnable {
     bs.show();
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args)
+  {
     Hex game = new Hex();
     game.frame.setResizable(false);
     game.frame.setTitle(title);

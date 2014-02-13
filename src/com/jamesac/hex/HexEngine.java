@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,17 +16,17 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex;
+package com.jamesac.Hex;
 
-import com.jamesac.hex.Graphics.HexSprite;
-import com.jamesac.hex.Object.Component.HCDrawable;
-import com.jamesac.hex.Object.Component.HCPosition;
-import com.jamesac.hex.Object.Component.HCVelocity;
-import com.jamesac.hex.Object.HexObjectManager;
-import com.jamesac.hex.Object.Systems.HSPhysics;
-import com.jamesac.hex.Object.Systems.HSRender;
-import com.jamesac.hex.Object.Systems.HexSystem;
-import com.jamesac.hex.Object.Systems.HexSystemManager;
+import com.jamesac.Hex.Graphics.HexSprite;
+import com.jamesac.Hex.Object.Component.HCDrawable;
+import com.jamesac.Hex.Object.Component.HCPosition;
+import com.jamesac.Hex.Object.Component.HCVelocity;
+import com.jamesac.Hex.Object.HexObjectManager;
+import com.jamesac.Hex.Object.Systems.HSPhysics;
+import com.jamesac.Hex.Object.Systems.HSRender;
+import com.jamesac.Hex.Object.Systems.HexSystem;
+import com.jamesac.Hex.Object.Systems.HexSystemManager;
 
 import java.util.UUID;
 

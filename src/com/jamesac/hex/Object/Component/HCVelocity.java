@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 JamesAC (james@jamesac.co.uk)
+ * Copyright (C) 2014 JamesAC (james@jamesac.co.uk)
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.hex.Object.Component;
+package com.jamesac.Hex.Object.Component;
 
 /**
  * Created by James on 07/02/14.
@@ -26,12 +26,14 @@ public class HCVelocity implements HexComponent {
   public double x;
   public double y;
 
-  public HCVelocity(double x, double y) {
+  public HCVelocity(double x, double y)
+  {
     this.x = x;
     this.y = y;
   }
 
-  public String toString() {
+  public String toString()
+  {
     return "(" + x + "," + y + ")";
   }
 

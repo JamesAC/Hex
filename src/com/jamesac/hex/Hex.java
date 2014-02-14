@@ -119,7 +119,9 @@ public class Hex extends Canvas implements Runnable {
                      0,
                      engine.display.pixels.length);
 
-    Graphics g = bs.getDrawGraphics();
+    Graphics2D g = (Graphics2D) bs.getDrawGraphics();
+    g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                       RenderingHints.VALUE_ANTIALIAS_ON);
     g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
     g.dispose();
     bs.show();

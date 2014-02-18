@@ -23,6 +23,7 @@ import com.jamesac.Hex.Object.Component.HCDrawable;
 import com.jamesac.Hex.Object.Component.HCPosition;
 import com.jamesac.Hex.Object.Component.HCVelocity;
 import com.jamesac.Hex.Object.HexObjectManager;
+import com.jamesac.Hex.Object.Systems.HSLevel;
 import com.jamesac.Hex.Object.Systems.HSPhysics;
 import com.jamesac.Hex.Object.Systems.HSRender;
 import com.jamesac.Hex.Object.Systems.HexSystem;
@@ -39,9 +40,10 @@ public class HexEngine {
 
   public HexEngine(int width, int height)
   {
+    display = new HexDisplay(width, height);
     objectManager = new HexObjectManager();
     systemManager = new HexSystemManager(objectManager);
-    display = new HexDisplay(width, height);
+    systemManager.addSystem(new HSLevel());
     systemManager.addSystem(new HSRender(display));
     systemManager.addSystem(new HSPhysics());
 

@@ -37,6 +37,11 @@ public class HexSpriteSheet {
       128,
       256);
 
+  public static HexSpriteSheet tiles = new HexSpriteSheet(
+      "/Spritesheet/fullTiles.png",
+      512,
+      512);
+
   public HexSpriteSheet(String path, int width, int height)
   {
     this.path = path;

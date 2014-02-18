@@ -33,6 +33,9 @@ public class HexSprite {
                                                     66,
                                                     HexSpriteSheet.aliens);
 
+  public static HexSprite tileDirt = new HexSprite(0, 0, 65, 89,
+                                                   HexSpriteSheet.tiles);
+
   public HexSprite(int xOff,
                    int yOff,
                    int width,

@@ -42,11 +42,14 @@ public class HSRender extends HexSystem {
   public void run()
   {
     display.clear();
-    Set<UUID> objs = objectManager.getAllObjectsWithComponent(HCDrawable.class);
-    for (UUID o : objs) {
+    Set<UUID> objects = objectManager
+        .getAllObjectsWithComponent(HCDrawable.class);
+
+    for (UUID o : objects) {
       HCDrawable drawable = objectManager.getComponent(o, HCDrawable.class);
       HCPosition position = objectManager.getComponent(o, HCPosition.class);
-      display.renderSprite((int) position.x, (int) position.y, drawable.sprite);
+      display.renderSprite((int) position.x, (int) position.y,
+                           drawable.sprite, drawable.layer);
     }
   }
 

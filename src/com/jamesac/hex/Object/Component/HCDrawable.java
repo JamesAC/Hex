@@ -21,9 +21,8 @@ package com.jamesac.Hex.Object.Component;
 import com.jamesac.Hex.Graphics.HexSprite;
 
 /**
- * Component to store drawable sprite for an object. Will be drawn centered on
- * an accompanying {@link com.jamesac.Hex.Object.Component.HCPosition}
- * component.
+ * Component to store drawable sprite for an object. Will be drawn centered on an accompanying {@link
+ * com.jamesac.Hex.Object.Component.HCPosition} component.
  *
  * @author JamesAC
  */

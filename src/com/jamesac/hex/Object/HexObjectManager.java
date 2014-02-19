@@ -20,7 +20,13 @@ package com.jamesac.Hex.Object;
 
 import com.jamesac.Hex.Object.Component.HexComponent;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 /**
  * Created by James on 02/02/14. Based on code from http://entity-systems-wiki.t-machine.org/rdbms-beta

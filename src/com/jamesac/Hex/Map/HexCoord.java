@@ -34,10 +34,10 @@ public class HexCoord {
     y = 0;
   }
 
-  public HexCoord(int r, int q)
+  public HexCoord(int q, int r)
   {
-    this.r = r;
     this.q = q;
+    this.r = r;
     this.y = -r - q;
   }
 

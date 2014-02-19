@@ -30,12 +30,19 @@ import com.jamesac.Hex.Graphics.HexSprite;
 public class HCDrawable implements HexComponent {
 
   public HexSprite sprite;
+  public int       layer;
 
   /**
    * @param sprite The sprite to be used to render the owner object
    */
   public HCDrawable(HexSprite sprite)
   {
+    this(sprite, 0);
+  }
+
+  public HCDrawable(HexSprite sprite, int layer)
+  {
     this.sprite = sprite;
+    this.layer = layer;
   }
 }

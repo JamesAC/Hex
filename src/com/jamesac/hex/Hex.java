@@ -19,7 +19,12 @@
 package com.jamesac.Hex;
 
 import javax.swing.JFrame;
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
@@ -113,11 +118,11 @@ public class Hex extends Canvas implements Runnable {
       return;
     }
 
-    System.arraycopy(engine.display.pixels,
+    System.arraycopy(engine.display.pixels[1],
                      0,
                      pixels,
                      0,
-                     engine.display.pixels.length);
+                     engine.display.pixels[1].length);
 
     Graphics2D g = (Graphics2D) bs.getDrawGraphics();
     g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,

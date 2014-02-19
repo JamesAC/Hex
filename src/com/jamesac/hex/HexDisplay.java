@@ -26,23 +26,23 @@ public class HexDisplay {
 
   private Random random = new Random();
 
-  private   int   width;
-  private   int   height;
-  protected int[] pixels;
+  private   int     width;
+  private   int     height;
+  protected int[][] pixels;
 
   public HexDisplay(int width, int height)
   {
     this.width = width;
     this.height = height;
 
-    pixels = new int[width * height];
+    pixels = new int[2][width * height];
 
     for (int i = 0; i < width * height; i++) {
-      pixels[i] = random.nextInt();
+      pixels[1][i] = random.nextInt();
     }
   }
 
-  public void renderSprite(int xp, int yp, HexSprite sprite)
+  public void renderSprite(int xp, int yp, HexSprite sprite, int layer)
   {
     xp -= sprite.width / 2;
     yp -= sprite.height / 2;
@@ -51,10 +51,13 @@ public class HexDisplay {
       for (int x = 0; x < sprite.width; x++) {
         int xa = x + xp;
         if (xa < -sprite.width || xa >= width || ya < 0 || ya >= height) break;
-        if (xa < 0) xa = 0;
-        int col = sprite.pixels[x + y * sprite.width];
-        if (col != 0x00000000) {
-          pixels[xa + ya * width] = col;
+        if (xa < 0 || ya < 0) continue;
+        if ((pixels[0][xa + ya * width] < layer)) {
+          int col = sprite.pixels[x + y * sprite.width];
+          if (col != 0x00000000) {
+            pixels[0][xa + ya * width] = layer;
+            pixels[1][xa + ya * width] = col;
+          }
         }
       }
     }
@@ -70,15 +73,17 @@ public class HexDisplay {
    */
   public void clear(int col)
   {
-    for (int i = 0; i < pixels.length; i++) {
-      pixels[i] = col;
+    for (int i = 0; i < pixels[0].length; i++) {
+      pixels[0][i] = Integer.MIN_VALUE;
+      pixels[1][i] = col;
     }
   }
 
   public void clearRand()
   {
-    for (int i = 0; i < pixels.length; i++) {
-      pixels[i] = random.nextInt();
+    for (int i = 0; i < pixels[0].length; i++) {
+      pixels[0][i] = Integer.MIN_VALUE;
+      pixels[1][i] = random.nextInt();
     }
   }
 }

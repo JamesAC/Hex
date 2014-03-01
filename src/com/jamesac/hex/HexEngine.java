@@ -20,9 +20,11 @@ package com.jamesac.Hex;
 
 import com.jamesac.Hex.Graphics.HexSprite;
 import com.jamesac.Hex.Object.Component.HCDrawable;
+import com.jamesac.Hex.Object.Component.HCKeyMotion;
 import com.jamesac.Hex.Object.Component.HCPosition;
 import com.jamesac.Hex.Object.Component.HCVelocity;
 import com.jamesac.Hex.Object.HexObjectManager;
+import com.jamesac.Hex.Object.Systems.HSKeyMotion;
 import com.jamesac.Hex.Object.Systems.HSLevel;
 import com.jamesac.Hex.Object.Systems.HSPhysics;
 import com.jamesac.Hex.Object.Systems.HSRender;
@@ -46,11 +48,13 @@ public class HexEngine {
     systemManager.addSystem(new HSLevel());
     systemManager.addSystem(new HSRender(display));
     systemManager.addSystem(new HSPhysics());
+    systemManager.addSystem(new HSKeyMotion());
 
     UUID alien = objectManager.createObject("alien");
     objectManager.addComponent(alien, new HCDrawable(HexSprite.blueAlien));
     objectManager.addComponent(alien, new HCPosition(50.0, 50.0));
-    objectManager.addComponent(alien, new HCVelocity(3.0, 3.0));
+    objectManager.addComponent(alien, new HCVelocity(0.0, 0.0));
+    objectManager.addComponent(alien, new HCKeyMotion());
   }
 
   public void update(double dt)

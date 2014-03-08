@@ -16,10 +16,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Component;
+package com.jamesac.Temp.Object.Component;
 
 /**
- * Created by James on 01/03/14.
+ * Created by James on 02/02/14.
  */
-public class HCKeyMotion implements HexComponent {
+public interface HexComponent {
+
 }

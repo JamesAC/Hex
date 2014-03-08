@@ -16,10 +16,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Systems;
+package com.jamesac.Temp.Object.Systems;
 
-import com.jamesac.Hex.Object.Component.HCPosition;
-import com.jamesac.Hex.Object.Component.HCVelocity;
+import com.jamesac.Temp.HexDisplay;
+import com.jamesac.Temp.Object.Component.HCDrawable;
+import com.jamesac.Temp.Object.Component.HCPosition;
 
 import java.util.Set;
 import java.util.UUID;
@@ -27,35 +28,34 @@ import java.util.UUID;
 /**
  * Created by James on 07/02/14.
  */
-public class HSPhysics extends HexSystem {
+public class HSRender extends HexSystem {
 
-  public HSPhysics()
+  private HexDisplay display;
+
+  public HSRender(HexDisplay display)
   {
-    minTime = 1000000000.0 / 60;
+    super();
+    this.display = display;
   }
 
   @Override
-  protected void run()
+  public void run()
   {
-    Set<UUID> objectsWithVelComponent = objectManager
-        .getAllObjectsWithComponent(HCVelocity.class);
-    for (UUID o : objectsWithVelComponent) {
-      HCVelocity velocity = objectManager.getComponent(o, HCVelocity.class);
+    display.clear();
+    Set<UUID> objects = objectManager
+        .getAllObjectsWithComponent(HCDrawable.class);
+
+    for (UUID o : objects) {
+      HCDrawable drawable = objectManager.getComponent(o, HCDrawable.class);
       HCPosition position = objectManager.getComponent(o, HCPosition.class);
-      position.x += velocity.x;
-      if (position.x > 1920 / 3 || position.x < 0) {
-        velocity.x = -(velocity.x);
-      }
-      position.y += velocity.y;
-      if (position.y > 1080 / 3 || position.y < 0) {
-        velocity.y = -(velocity.y);
-      }
+      display.renderSprite((int) position.x, (int) position.y,
+                           drawable.sprite, drawable.layer);
     }
   }
 
   @Override
   public String getName()
   {
-    return "System: Physics";
+    return null;
   }
 }

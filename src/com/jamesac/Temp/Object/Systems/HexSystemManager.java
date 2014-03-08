@@ -16,39 +16,43 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Systems;
+package com.jamesac.Temp.Object.Systems;
 
-import com.jamesac.Hex.Object.HexObjectManager;
+import com.jamesac.Temp.Object.HexObjectManager;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by James on 07/02/14.
  */
-public abstract class HexSystem {
+public class HexSystemManager {
 
-  protected double minTime = 0;
-  private   double           tDiff;
-  protected HexObjectManager objectManager;
+  private boolean          frozen;
+  public  List<HexSystem>  systems;
+  private HexObjectManager objectManager;
 
-  protected HexSystem()
-  {
-
-  }
-
-  public void update(double dt)
-  {
-    tDiff += dt;
-    if (tDiff > minTime) {
-      this.run();
-      tDiff = 0;
-    }
-  }
-
-  protected abstract void run();
-
-  public abstract String getName();
-
-  public void setObjectManager(HexObjectManager objectManager)
+  public HexSystemManager(HexObjectManager objectManager)
   {
     this.objectManager = objectManager;
+    frozen = false;
+    systems = new LinkedList<HexSystem>();
+  }
+
+  public <T extends HexSystem> void addSystem(T system)
+  {
+    if (frozen) return;
+    system.setObjectManager(objectManager);
+    systems.add(system);
+  }
+
+  public void freeze()
+  {
+    frozen = true;
+  }
+
+  public void unfreeze()
+  {
+    frozen = false;
   }
 }

@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Component;
+package com.jamesac.Temp.Object.Component;
 
 /**
  * Defines location of center of object. All logic should use this as a <b>center</b> point.

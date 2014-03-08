@@ -16,9 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex;
+package com.jamesac.Temp;
 
-import com.jamesac.Hex.Graphics.HexSprite;
+import com.jamesac.Temp.Graphics.HexSprite;
 
 import java.util.Random;
 

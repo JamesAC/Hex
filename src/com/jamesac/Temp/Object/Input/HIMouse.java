@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Input;
+package com.jamesac.Temp.Object.Input;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

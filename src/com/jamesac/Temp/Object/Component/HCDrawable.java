@@ -16,43 +16,32 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Systems;
+package com.jamesac.Temp.Object.Component;
 
-import com.jamesac.Hex.Object.HexObjectManager;
-
-import java.util.LinkedList;
-import java.util.List;
+import com.jamesac.Temp.Graphics.HexSprite;
 
 /**
- * Created by James on 07/02/14.
+ * Component to store drawable sprite for an object. Will be drawn centered on an accompanying {@link
+ * com.jamesac.Temp.Object.Component.HCPosition} component.
+ *
+ * @author JamesAC
  */
-public class HexSystemManager {
+public class HCDrawable implements HexComponent {
 
-  private boolean          frozen;
-  public  List<HexSystem>  systems;
-  private HexObjectManager objectManager;
+  public HexSprite sprite;
+  public int       layer;
 
-  public HexSystemManager(HexObjectManager objectManager)
+  /**
+   * @param sprite The sprite to be used to render the owner object
+   */
+  public HCDrawable(HexSprite sprite)
   {
-    this.objectManager = objectManager;
-    frozen = false;
-    systems = new LinkedList<HexSystem>();
+    this(sprite, 0);
   }
 
-  public <T extends HexSystem> void addSystem(T system)
+  public HCDrawable(HexSprite sprite, int layer)
   {
-    if (frozen) return;
-    system.setObjectManager(objectManager);
-    systems.add(system);
-  }
-
-  public void freeze()
-  {
-    frozen = true;
-  }
-
-  public void unfreeze()
-  {
-    frozen = false;
+    this.sprite = sprite;
+    this.layer = layer;
   }
 }

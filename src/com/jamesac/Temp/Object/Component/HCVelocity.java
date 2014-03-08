@@ -16,32 +16,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Component;
-
-import com.jamesac.Hex.Graphics.HexSprite;
+package com.jamesac.Temp.Object.Component;
 
 /**
- * Component to store drawable sprite for an object. Will be drawn centered on an accompanying {@link
- * com.jamesac.Hex.Object.Component.HCPosition} component.
- *
- * @author JamesAC
+ * Created by James on 07/02/14.
  */
-public class HCDrawable implements HexComponent {
+public class HCVelocity implements HexComponent {
 
-  public HexSprite sprite;
-  public int       layer;
+  public double x;
+  public double y;
 
-  /**
-   * @param sprite The sprite to be used to render the owner object
-   */
-  public HCDrawable(HexSprite sprite)
+  public HCVelocity(double x, double y)
   {
-    this(sprite, 0);
+    this.x = x;
+    this.y = y;
   }
 
-  public HCDrawable(HexSprite sprite, int layer)
+  public String toString()
   {
-    this.sprite = sprite;
-    this.layer = layer;
+    return "(" + x + "," + y + ")";
   }
+
 }

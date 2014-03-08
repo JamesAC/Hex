@@ -16,9 +16,9 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object;
+package com.jamesac.Temp.Object;
 
-import com.jamesac.Hex.Object.Component.HexComponent;
+import com.jamesac.Temp.Object.Component.HexComponent;
 
 import java.util.Collection;
 import java.util.HashMap;

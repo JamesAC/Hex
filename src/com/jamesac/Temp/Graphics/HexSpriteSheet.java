@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Graphics;
+package com.jamesac.Temp.Graphics;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

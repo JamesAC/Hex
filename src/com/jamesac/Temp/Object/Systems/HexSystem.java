@@ -16,31 +16,39 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Systems;
+package com.jamesac.Temp.Object.Systems;
 
-import com.jamesac.Hex.Object.Input.HIMouse;
+import com.jamesac.Temp.Object.HexObjectManager;
 
 /**
- * Created by James on 01/03/14.
+ * Created by James on 07/02/14.
  */
-public class HSMouse extends HexSystem {
+public abstract class HexSystem {
 
-  private HIMouse mouse;
+  protected double minTime = 0;
+  private   double           tDiff;
+  protected HexObjectManager objectManager;
 
-  public HSMouse()
-  {
-    minTime = 1000000000.0 / 60.0;
-  }
-
-  @Override
-  protected void run()
+  protected HexSystem()
   {
 
   }
 
-  @Override
-  public String getName()
+  public void update(double dt)
   {
-    return null;
+    tDiff += dt;
+    if (tDiff > minTime) {
+      this.run();
+      tDiff = 0;
+    }
+  }
+
+  protected abstract void run();
+
+  public abstract String getName();
+
+  public void setObjectManager(HexObjectManager objectManager)
+  {
+    this.objectManager = objectManager;
   }
 }

@@ -16,11 +16,31 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Component;
+package com.jamesac.Temp.Object.Systems;
+
+import com.jamesac.Temp.Object.Input.HIMouse;
 
 /**
- * Created by James on 02/02/14.
+ * Created by James on 01/03/14.
  */
-public interface HexComponent {
+public class HSMouse extends HexSystem {
 
+  private HIMouse mouse;
+
+  public HSMouse()
+  {
+    minTime = 1000000000.0 / 60.0;
+  }
+
+  @Override
+  protected void run()
+  {
+
+  }
+
+  @Override
+  public String getName()
+  {
+    return null;
+  }
 }

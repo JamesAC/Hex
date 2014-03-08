@@ -16,13 +16,13 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Systems;
+package com.jamesac.Temp.Object.Systems;
 
-import com.jamesac.Hex.Map.HexCoord;
-import com.jamesac.Hex.Map.HexMap;
-import com.jamesac.Hex.Map.HexTile;
-import com.jamesac.Hex.Object.Component.HCDrawable;
-import com.jamesac.Hex.Object.Component.HCPosition;
+import com.jamesac.Temp.Map.HexCoord;
+import com.jamesac.Temp.Map.HexMap;
+import com.jamesac.Temp.Map.HexTile;
+import com.jamesac.Temp.Object.Component.HCDrawable;
+import com.jamesac.Temp.Object.Component.HCPosition;
 
 import java.util.Map;
 import java.util.UUID;

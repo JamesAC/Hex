@@ -16,20 +16,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex;
+package com.jamesac.Temp;
 
-import com.jamesac.Hex.Graphics.HexSprite;
-import com.jamesac.Hex.Object.Component.HCDrawable;
-import com.jamesac.Hex.Object.Component.HCKeyMotion;
-import com.jamesac.Hex.Object.Component.HCPosition;
-import com.jamesac.Hex.Object.Component.HCVelocity;
-import com.jamesac.Hex.Object.HexObjectManager;
-import com.jamesac.Hex.Object.Systems.HSKeyMotion;
-import com.jamesac.Hex.Object.Systems.HSLevel;
-import com.jamesac.Hex.Object.Systems.HSPhysics;
-import com.jamesac.Hex.Object.Systems.HSRender;
-import com.jamesac.Hex.Object.Systems.HexSystem;
-import com.jamesac.Hex.Object.Systems.HexSystemManager;
+import com.jamesac.Temp.Graphics.HexSprite;
+import com.jamesac.Temp.Object.Component.HCDrawable;
+import com.jamesac.Temp.Object.Component.HCKeyMotion;
+import com.jamesac.Temp.Object.Component.HCPosition;
+import com.jamesac.Temp.Object.Component.HCVelocity;
+import com.jamesac.Temp.Object.HexObjectManager;
+import com.jamesac.Temp.Object.Systems.HSKeyMotion;
+import com.jamesac.Temp.Object.Systems.HSLevel;
+import com.jamesac.Temp.Object.Systems.HSPhysics;
+import com.jamesac.Temp.Object.Systems.HSRender;
+import com.jamesac.Temp.Object.Systems.HexSystem;
+import com.jamesac.Temp.Object.Systems.HexSystemManager;
 
 import java.util.UUID;
 

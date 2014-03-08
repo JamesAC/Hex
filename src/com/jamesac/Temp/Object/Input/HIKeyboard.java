@@ -16,25 +16,43 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Object.Component;
+package com.jamesac.Temp.Object.Input;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
- * Created by James on 07/02/14.
+ * Created by James on 01/03/14.
  */
-public class HCVelocity implements HexComponent {
+public class HIKeyboard implements KeyListener {
 
-  public double x;
-  public double y;
+  private static boolean[] keys = new boolean[120];
+  public boolean up, down, left, right, esc;
 
-  public HCVelocity(double x, double y)
+  @Override
+  public void keyTyped(KeyEvent e)
   {
-    this.x = x;
-    this.y = y;
+
   }
 
-  public String toString()
+  @Override
+  public void keyPressed(KeyEvent e)
   {
-    return "(" + x + "," + y + ")";
+    keys[e.getKeyCode()] = true;
   }
 
+  @Override
+  public void keyReleased(KeyEvent e)
+  {
+    keys[e.getKeyCode()] = false;
+  }
+
+  public void update()
+  {
+    up = keys[KeyEvent.VK_UP] || keys[KeyEvent.VK_W];
+    down = keys[KeyEvent.VK_DOWN] || keys[KeyEvent.VK_S];
+    left = keys[KeyEvent.VK_LEFT] || keys[KeyEvent.VK_A];
+    right = keys[KeyEvent.VK_RIGHT] || keys[KeyEvent.VK_D];
+    esc = keys[KeyEvent.VK_ESCAPE];
+  }
 }

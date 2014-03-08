@@ -16,7 +16,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-package com.jamesac.Hex.Graphics;
+package com.jamesac.Temp.Graphics;
 
 /**
  * Created by James on 07/02/14.
@@ -33,8 +33,10 @@ public class HexSprite {
                                                     66,
                                                     HexSpriteSheet.aliens);
 
-  public static HexSprite tileDirt = new HexSprite(0, 0, 65, 89,
-                                                   HexSpriteSheet.tiles);
+  public static HexSprite tileDirt  = new HexSprite(0, 0, 65, 89,
+                                                    HexSpriteSheet.tiles);
+  public static HexSprite tileGrass = new HexSprite(195, 267, 65, 89,
+                                                    HexSpriteSheet.tiles);
 
   public HexSprite(int xOff,
                    int yOff,
